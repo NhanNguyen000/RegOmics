@@ -1,2 +1,4 @@
 library(knitr)
-library(tidyverse) # for the rbindlist
+library(tidyverse)
+library(shiny)
+library(DT)

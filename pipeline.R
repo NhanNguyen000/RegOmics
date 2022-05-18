@@ -4,17 +4,16 @@ for (i in list.files("./code")){
 }
 library(tidyverse)
 
-metadat <- load_samples()
+input_metadat <- load_samples()
 TF_target_reference <- regula_database()
 #TF_target_reference <- regula_database(tissue = "liver")
 
-metadat_v2 <- metadat %>% filter(input_types != "-") %>% dplyr::select(-note)
-metadat_v2 <- get_existed_regula(metadat_v2)
-metadat_v2 <- get_retrived_regula(metadat_v2, cutoff = 0.05)
+metadat_used <- input_metadat %>% filter(input_types != "-") %>% dplyr::select(-note)
+metadat_used <- get_existed_regula(metadat_used)
+metadat_used <- get_retrived_regula(metadat_used, cutoff = 0.05)
 get_across_TFs()
-# input for Cystoscape
 
+# input for Cystoscape
 TFs <- read.delim("./process/across_TFs.txt")
-samples <- c("Protein_Rif_The_002.txt", "Protein_Rif_The_008.csv")
 get_input_Cytos(TFs = read.delim("./process/across_TFs.txt")$TFs,
-                samples = metadat_v2$samples)
+                samples = metadat_used$samples)

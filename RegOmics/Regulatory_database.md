@@ -1,0 +1,3 @@
+### Defaut regulatory database:
++ [The database of human transcription factor targets](http://bioinfo.life.hust.edu.cn/hTFtarget#!/), Zhang, Q. et al. (2020) "hTFtarget: a comprehensive database for regulations of human transcription factors and their targets". Genomics, Proteomics & Bioinformatics, [doi:10.1016/j.gpb.2019.09.006](https://doi.org/10.1016/j.gpb.2019.09.006).
++ [The LncRNA2Target v3.0](http://bio-annotation.cn/lncrna2target/index.jsp), Jiang, Q. et al. (2021) "LncRNA2Target v2.0: a comprehensive database for target genes of lncRNAs in human and mouse". Nucleic acids research, [doi:10.1093/nar/gky1051](https://doi.org/10.1093/nar/gky1051)

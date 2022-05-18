@@ -13,43 +13,50 @@ library(shiny)
 shinyUI(fluidPage(
   
   # Application title
-  titlePanel("Old Faithful Geyser Data"),
-  
-  # Part 1 - general information
-  h3("Input and Run"),
+  titlePanel("RegOmics"),
   mainPanel(uiOutput("infoPage"), width = 12),
   
-  # Part 2 - input
+  # Part 1 - general information & input
   h3("Input and Run"),
   sidebarLayout(
     sidebarPanel(
       fileInput("file",
                 label="Upload files (txt/csv) here",
-                multiple = TRUE)
+                multiple = TRUE),
+      actionButton("runScript", "Click me to run the tool")
     ),
-    mainPanel(textOutput("count"))
+    mainPanel(uiOutput("Regulatory_database"))
     ),
   
-  # Part 3 - outcome
+  # Part 2 - outcome
   h3("Outcome"),
   navlistPanel(
     tabPanel(title = "Input samples",
-             textOutput("samples"),
-             tableOutput("metadat")
+             textOutput("input_metadat_text"),
+             tableOutput("input_metadat")
     ),
-    tabPanel(title = "Available TFs in the data",
-             textOutput("avai_TFs_text"),
-             tableOutput("avai_TFs_dat")
+    tabPanel(title = "Samples used",
+             textOutput("metadat_used_text"),
+             tableOutput("metadat_used")
+    ),
+    tabPanel(title = "Across TFs in the data",
+             textOutput("across_TFs_text"),
+             DT::dataTableOutput("across_TFs")
+    ),
+    tabPanel(title = "TF-target network",
+             textOutput("network_text"),
+             DT::dataTableOutput("network"),
+             textOutput("download_text"),
+             downloadButton("download_network.txt", "Network table"),
+             downloadButton("download_nodes_info.txt", "Node table")
     )
   ),
-  
-  
-  # Part 4 - original shiny
-  h3("Original"),
+  # Part 3 - clean the tools and re-run
+  h3("Reset the tool"),
   sidebarLayout(
-    sidebarPanel( # Sidebar with a slider input for number of bins 
-      sliderInput("bins", "Number of bins:",
-                  min = 1, max = 50, value = 30)),
-    mainPanel( # Show a plot of the generated distribution
-      plotOutput("distPlot")))
+    sidebarPanel(
+      actionButton("reset", "Click me to reset the tool")
+    ),
+    mainPanel(textOutput("reset_text"))
+  )
 ))

@@ -1,0 +1,13 @@
+name: RegOmics_Rshinyapp
+title: RegOmics_Rshinyapp
+username:
+account: nhannguyen
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6332750
+bundleId: 5922633
+url: https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/
+when: 1652954690.07895
+lastSyncTime: 1652954690.07895
+asMultiple: FALSE
+asStatic: FALSE

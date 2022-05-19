@@ -1,0 +1,6 @@
+library(BiocManager)
+options(repos = BiocManager::repositories())
+library(knitr)
+library(tidyverse)
+library(shiny)
+library(DT)

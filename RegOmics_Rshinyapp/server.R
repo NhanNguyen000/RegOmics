@@ -11,17 +11,16 @@
 shinyServer(function(input, output, session) {
   
   output$infoPage <- renderUI({
-    HTML(markdown::markdownToHTML(knit('./infoPage.Rmd', quiet = TRUE)))
+    HTML(markdown::markdownToHTML(knit('infoPage.Rmd', quiet = TRUE)))
   })
   
   output$Regulatory_database <- renderUI({
-    HTML(markdown::markdownToHTML(knit('./Regulatory_database.Rmd', quiet = TRUE)))
+    HTML(markdown::markdownToHTML(knit('Regulatory_database.Rmd', quiet = TRUE)))
   })
   
   observe({
     file.copy(from = input$file$datapath, 
               to = paste0("./input/", input$file$name))
-    list.files("./input/")
   })
 
   
@@ -53,16 +52,16 @@ shinyServer(function(input, output, session) {
     
     output$download_text <- renderText({
       print("Download files to import in Cytoscape for visualization:")})
-    output$download_network.txt <- downloadHandler(
+    output$network_table.txt <- downloadHandler(
       filename = function() {"network.txt"},
       content = function(file) {
         write.table(read.delim("./output/network.txt"), file,
                     sep="\t", quote = FALSE, row.names = FALSE)},
       contentType = "text/plain")
-    output$download_nodes_info.txt <- downloadHandler(
+    output$nodes_table.txt <- downloadHandler(
       filename = function() {"nodes_info.txt"},
       content = function(file) {
-        write.table(read.delim("./output/nodes_info.txt"), file,
+        write.table(read.delim("output/nodes_info.txt"), file,
                     sep="\t", quote = FALSE, row.names = FALSE)},
       contentType = "text/plain")
   })

@@ -47,8 +47,8 @@ shinyUI(fluidPage(
              textOutput("network_text"),
              DT::dataTableOutput("network"),
              textOutput("download_text"),
-             downloadButton("download_network.txt", "Network table"),
-             downloadButton("download_nodes_info.txt", "Node table")
+             downloadButton("network_table.txt", "Network table"),
+             downloadButton("nodes_table.txt", "Node table")
     )
   ),
   # Part 3 - clean the tools and re-run

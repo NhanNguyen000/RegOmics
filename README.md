@@ -8,7 +8,7 @@ RegOmics is able to operate with the long list of genes/proteins derived from om
 RegOmics is also available as a web-based version [https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/](https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/).
 
 ## Instructions
-- The **code** stores all R separated functions that are used in the RegOmics pipeline
+- The **code** folder stores all R separated functions that are used in the RegOmics pipeline
 - The **example** folder stores some example files to run in the RegOmics tool
 - The **reference** folder stores the default TF-target relation databases
 - The **pipeline** file is run the the RegOmics pipeline as an R script.

@@ -1,9 +1,11 @@
 # RegOmics
 
 ## Description
-This repository is the code source for the RegOmics (Regulatory extraction for Omics data) tool for identifying transcription (TF) - target relations and suggesting potential TF candidates in user-uploaded data. This tool is able to operate with the long list of genes/proteins derived from omic data. RegOmics can identify the TF-target relations that existed in the user input data, can rank these TF-target relations, and could suggest candidate TFs to researchers
+This repository is the code source for the RegOmics (Regulatory extraction for Omics data) tool for identifying transcription (TF) - target relations and suggesting potential TF candidates in user-uploaded data. 
 
-The tool is also available as a web-based version [https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/](https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/).
+RegOmics is able to operate with the long list of genes/proteins derived from omic data. This tool can identify the TF-target relations that existed in the user input data, can rank these TF-target relations, and could suggest candidate TFs to researchers
+
+RegOmics is also available as a web-based version [https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/](https://nhannguyen.shinyapps.io/RegOmics_Rshinyapp/).
 
 ## Instructions
 - The **code** stores all R separated functions that are used in the RegOmics pipeline

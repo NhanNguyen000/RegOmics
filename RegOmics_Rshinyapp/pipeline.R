@@ -5,8 +5,12 @@ for (i in list.files("./code")){
 library(tidyverse)
 
 input_metadat <- load_samples()
-TF_target_reference <- regula_database()
-#TF_target_reference <- regula_database(tissue = "liver")
+
+# to reduce the required memory for the R shiny app online, we process the TF_target_reference and save it as .rds file
+#TF_target_reference <- regula_database() %>% as_tibble() %>%
+#  dplyr::select(TF, target) %>% distinct()
+#saveRDS(TF_target_reference, file = "TF_target_reference.rds")
+TF_target_reference <- readRDS(file = "TF_target_reference.rds")
 
 metadat_used <- input_metadat %>% filter(input_types != "-") %>% dplyr::select(-note)
 metadat_used <- get_existed_regula(metadat_used)

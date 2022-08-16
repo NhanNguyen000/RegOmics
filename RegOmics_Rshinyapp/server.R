@@ -19,8 +19,11 @@ shinyServer(function(input, output, session) {
   })
   
   observe({
+    dir.create("input", recursive = TRUE)
+    dir.create("output", recursive = TRUE)
+    dir.create("process", recursive = TRUE)
     file.copy(from = input$file$datapath, 
-              to = paste0("./input/", input$file$name))
+              to = paste0("input/", input$file$name))
   })
 
   
@@ -71,6 +74,7 @@ shinyServer(function(input, output, session) {
     do.call(file.remove, list(list.files("./input/", full.names = TRUE)))
     do.call(file.remove, list(list.files("./process/", full.names = TRUE)))
     do.call(file.remove, list(list.files("./output/", full.names = TRUE)))
+    session$reload()
   })
   output$reset_text <- renderText({
     print("Clear all the uploaded data and reset the R environment before the new run")})

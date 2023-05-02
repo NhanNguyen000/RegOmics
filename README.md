@@ -1,7 +1,7 @@
 # RegOmics
 
 ## Description
-This repository is the code source for the RegOmics (Regulatory extraction for Omics data) tool for identifying transcription (TF) - target relations and suggesting potential TF candidates in user-uploaded data. 
+This repository is the code source for the RegOmics (Regulatory extraction for Omics data) tool for identifying transcription (TF) - target relations and suggesting potential TF candidates in user-uploaded data. This work belongs to the Chapter 4 of my [PhD thesis](http://doi.org/10.26481/dis.20221122tn).
 
 RegOmics is able to operate with the long list of genes/proteins derived from omic data. This tool can identify the TF-target relations that existed in the user input data, can rank these TF-target relations, and could suggest candidate TFs to researchers
 
